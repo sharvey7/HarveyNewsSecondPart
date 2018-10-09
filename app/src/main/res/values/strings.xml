@@ -9,5 +9,10 @@
     <string name="connection">No internet connection available!</string>
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">News Settings</string>
-   
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">date</string>
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_label </string>
+    <string name="sec">Sports</string>
 </resources>

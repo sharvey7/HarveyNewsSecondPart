@@ -4,9 +4,11 @@ import android.app.LoaderManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.Loader;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -46,8 +48,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
                                                 @Override
                                                 public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                                                     News currentNews = mAdapter.getItem(position);
-                                                    Uri newsUri = Uri.parse(currentNews.getUrl());
-                                                    Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
+                                                    Uri newsUri = Uri.parse(currentNews.getUrl());Intent websiteIntent = new Intent(Intent.ACTION_VIEW, newsUri);
                                                     startActivity(websiteIntent);
                                                 }
                                             }
@@ -66,11 +67,25 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
-        return new NewsLoader(this, USGS_REQUEST_URL);
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String newDate = sharedPrefs.getString(getString(R.string.settings_order_by_key),
+                getString(R.string.settings_order_by_default));
+        Uri baseUri = Uri.parse(USGS_REQUEST_URL);
+        Uri.Builder uriBuilder = baseUri.buildUpon();
+
+        uriBuilder.appendQueryParameter("format", "data");
+        uriBuilder.appendQueryParameter("limit", "10");
+        uriBuilder.appendQueryParameter("minAuthor", newDate);
+        uriBuilder.appendQueryParameter("orderby", "date");
+        return new NewsLoader(this, uriBuilder.toString());
     }
 
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
+
+        View loadingIndicator = findViewById(R.id.loading_indicator);
+        loadingIndicator.setVisibility(View.GONE);
+
         mEmptyStateTextView.setText(R.string.empty);
         mAdapter.clear();
         if (news != null && !news.isEmpty()) {
