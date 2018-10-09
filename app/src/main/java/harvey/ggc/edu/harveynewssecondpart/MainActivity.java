@@ -68,15 +68,18 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String newDate = sharedPrefs.getString(getString(R.string.settings_order_by_key),
+        String orderBy = sharedPrefs.getString(getString(R.string.settings_order_by_key),
                 getString(R.string.settings_order_by_default));
+
+        String defaultKeyWord = sharedPrefs.getString(getString(R.string.settings_order_by_keyword_key), getString(R.string.settings_by_keyword_value ));
         Uri baseUri = Uri.parse(USGS_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
-        uriBuilder.appendQueryParameter("format", "data");
+        uriBuilder.appendQueryParameter("format", "json");
         uriBuilder.appendQueryParameter("limit", "10");
-        uriBuilder.appendQueryParameter("minAuthor", newDate);
-        uriBuilder.appendQueryParameter("orderby", "date");
+        uriBuilder.appendQueryParameter("q", defaultKeyWord);
+        uriBuilder.appendQueryParameter("orderby", orderBy);
+
         return new NewsLoader(this, uriBuilder.toString());
     }
 

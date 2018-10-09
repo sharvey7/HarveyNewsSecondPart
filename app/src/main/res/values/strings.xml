@@ -15,4 +15,6 @@
     <string name="settings_order_by_key" translatable="false">order_by</string>
     <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_label </string>
     <string name="sec">Sports</string>
+    <string name="settings_order_by_keyword_key">sort_key_word</string>
+    <string name="settings_by_keyword_value">sports</string>
 </resources>
