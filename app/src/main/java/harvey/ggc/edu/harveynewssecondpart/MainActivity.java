@@ -83,8 +83,8 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> news) {
 
-        View loadingIndicator = findViewById(R.id.loading_indicator);
-        loadingIndicator.setVisibility(View.GONE);
+        //View loadingIndicator = findViewById(R.id.loading_indicator);
+        //loadingIndicator.setVisibility(View.GONE);
 
         mEmptyStateTextView.setText(R.string.empty);
         mAdapter.clear();

@@ -5,15 +5,15 @@ public class News {
     private String mUrl;
     private String mDateArticle;
     private String mArticleAuthor;
-    private String mSection;
+    //private String mSection;
 
-    public News(String articleName, String articleAuthor, String dateArticle, String url,
-                String section) {
+    public News(String articleName, String articleAuthor, String dateArticle, String url
+                ) {
         mArticleName = articleName;
         mUrl = url;
         mDateArticle = dateArticle;
         mArticleAuthor = articleAuthor;
-        mSection = section;
+        //mSection = section;
     }
 
     public String getArticleName() {
@@ -32,7 +32,5 @@ public class News {
         return mArticleAuthor;
     }
 
-    public String getSection() {
-        return mSection;
-    }
+
 }
