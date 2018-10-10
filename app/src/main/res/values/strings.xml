@@ -17,4 +17,5 @@
     <string name="sec">Sports</string>
     <string name="settings_order_by_keyword_key">sort_key_word</string>
     <string name="settings_by_keyword_value">sports</string>
+
 </resources>
