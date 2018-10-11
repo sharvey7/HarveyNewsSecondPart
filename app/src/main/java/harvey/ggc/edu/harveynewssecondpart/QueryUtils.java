@@ -120,7 +120,6 @@ public class QueryUtils {
                 String name = localNews.getString("webTitle");
                 String url = localNews.getString("webUrl");
                 String date = localNews.getString("webPublicationDate");
-                //String section = (String) localNews.get("sectionName");
 
                 JSONArray authorResults = localNews.getJSONArray("tags");
                 if (authorResults == null) {

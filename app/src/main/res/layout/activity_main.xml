@@ -5,24 +5,23 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <ListView
-        xmlns:tools="http://schemas.android.com/tools"
+    <ListView xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         android:divider="@null"
-        android:id="@+id/list"
+        android:orientation="vertical"
         tools:context=".MainActivity" />
-        
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:id="@+id/empty_view"/>
+
+    <TextView
+        android:id="@+id/empty_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <ProgressBar
+        android:id="@+id/loading_indicator"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/loading_indicator"
-        android:layout_centerInParent="true"/>
+        android:layout_centerInParent="true" />
 
 </RelativeLayout>

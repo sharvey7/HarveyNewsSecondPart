@@ -5,15 +5,12 @@ public class News {
     private String mUrl;
     private String mDateArticle;
     private String mArticleAuthor;
-    //private String mSection;
 
-    public News(String articleName, String articleAuthor, String dateArticle, String url
-                ) {
+    public News(String articleName, String articleAuthor, String dateArticle, String url) {
         mArticleName = articleName;
         mUrl = url;
         mDateArticle = dateArticle;
         mArticleAuthor = articleAuthor;
-        //mSection = section;
     }
 
     public String getArticleName() {

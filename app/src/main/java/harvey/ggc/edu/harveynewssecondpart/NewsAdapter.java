@@ -17,19 +17,18 @@ public class NewsAdapter extends ArrayAdapter<News> {
 
     private static final String LOCATION_SEPERATOR = "of";
 
-    public NewsAdapter(Activity context, ArrayList<News> news){
+    public NewsAdapter(Activity context, ArrayList<News> news) {
         super(context, 0, news);
     }
 
-    public View getView(int position, @Nullable View convertView, @Nullable ViewGroup parent){
+    public View getView(int position, @Nullable View convertView, @Nullable ViewGroup parent) {
         View listItemView = convertView;
-        if(listItemView == null){
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false );
+        if (listItemView == null) {
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
 
             TextView articleName = listItemView.findViewById(R.id.names_textview);
             TextView articleAuthor = listItemView.findViewById(R.id.author_textview);
             TextView dateArticle = listItemView.findViewById(R.id.date_textview);
-           // TextView section = listItemView.findViewById(R.id.section_textview);
 
             News currentNews = getItem(position);
 

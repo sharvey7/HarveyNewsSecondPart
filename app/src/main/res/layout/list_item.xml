@@ -10,30 +10,29 @@
         android:orientation="vertical">
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/author_textview"
-            android:text=""
-            android:textStyle="bold"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:hint="@string/author"
-            android:paddingBottom="@dimen/betweenWords"/>
+            android:paddingBottom="@dimen/betweenWords"
+            android:text=""
+            android:textStyle="bold" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/date_textview"
-            android:textStyle="bold"
-            android:hint="@string/date"
-            android:paddingBottom="@dimen/smallSpace"/>
-
-        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/names_textview"
-            android:textStyle="bold"
-            android:hint="@string/title"
-            android:paddingBottom="@dimen/smallSpace"/>
+            android:hint="@string/date"
+            android:paddingBottom="@dimen/smallSpace"
+            android:textStyle="bold" />
 
+        <TextView
+            android:id="@+id/names_textview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/title"
+            android:paddingBottom="@dimen/smallSpace"
+            android:textStyle="bold" />
 
     </LinearLayout>
 
