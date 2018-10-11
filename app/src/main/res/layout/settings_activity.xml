@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <fragment
-   
+    android:name="harvey.ggc.edu.harveynewssecondpart.SettingsActivity$NewsPreferenceFragment"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SettingsActivity"

@@ -27,8 +27,11 @@ public class SettingsActivity extends AppCompatActivity {
             Preference sortKeyword = findPreference(getString(R.string.settings_order_by_keyword_key));
              bindPreferenceSummaryToValue(sortKeyword);
 
-            Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
-            bindPreferenceSummaryToValue(orderBy);
+            //Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
+            //bindPreferenceSummaryToValue(orderBy); doesnt work!
+
+            Preference orderKeyword = findPreference(getString(R.string.settings_order_by_default));
+            bindPreferenceSummaryToValue(orderKeyword);
         }
 
         @Override

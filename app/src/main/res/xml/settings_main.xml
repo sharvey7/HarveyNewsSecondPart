@@ -6,13 +6,13 @@
         android:defaultValue="@string/settings_order_by_default"
         android:inputType="text"
         android:selectAllOnFocus="true"
-        android:title="@string/settings_order_by_label" />
+        android:title="@string/settings_order_by_most_recent_label" />
 
     <ListPreference
         android:defaultValue="@string/settings_by_keyword_value"
         android:entries="@array/settings_order_by_labels"
         android:entryValues="@array/settings_order_by_values"
         android:key="@string/settings_order_by_keyword_key"
-        android:title="@string/settings_order_by_label" />
+        android:title="@string/settings_name_label" />
 
 </PreferenceScreen>
