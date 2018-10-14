@@ -24,14 +24,14 @@ public class SettingsActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.settings_main);
 
-            Preference sortKeyword = findPreference(getString(R.string.settings_order_by_keyword_key));
+            Preference sortKeyword = findPreference("q");
              bindPreferenceSummaryToValue(sortKeyword);
 
-            //Preference orderBy = findPreference(getString(R.string.settings_order_by_key));
-            //bindPreferenceSummaryToValue(orderBy); //doesnt work!
 
-            Preference orderKeyword = findPreference(getString(R.string.settings_order_by_default));
+            Preference orderKeyword = findPreference(getString(R.string.settings_order_by_keyword_key));
             bindPreferenceSummaryToValue(orderKeyword);
+
+
         }
 
         @Override

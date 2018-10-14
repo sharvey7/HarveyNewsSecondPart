@@ -6,6 +6,7 @@
         android:defaultValue="@string/settings_order_by_default"
         android:inputType="text"
         android:selectAllOnFocus="true"
+        android:key="@string/settings_order_by_key"
         android:title="@string/settings_order_by_most_recent_label" />
 
     <ListPreference
