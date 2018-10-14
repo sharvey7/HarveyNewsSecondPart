@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
 
     @Override
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
-        if (key.equals(getString(R.string.settings_order_by_keyword_key)) ||
+        if (key.equals(getString(R.string.settings_min_main_key)) ||
                 key.equals(getString(R.string.settings_order_by_key))) {
             mAdapter.clear();
             mEmptyStateTextView.setVisibility(View.GONE);
@@ -85,16 +85,16 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     @Override
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String orderBy = sharedPrefs.getString(getString(R.string.settings_order_by_key),
-                getString(R.string.settings_order_by_default));
+        String minAuthor = sharedPrefs.getString(getString(R.string.settings_min_main_key),
+                getString(R.string.settings_min_main_default));
 
-        String defaultKeyWord = sharedPrefs.getString(getString(R.string.settings_order_by_keyword_key), getString(R.string.settings_by_keyword_value));
+        String orderBy= sharedPrefs.getString(getString(R.string.settings_order_by_key), getString(R.string.settings_order_by_default));
         Uri baseUri = Uri.parse(USGS_REQUEST_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
 
         uriBuilder.appendQueryParameter("format", "json");
         uriBuilder.appendQueryParameter("limit", "10");
-        uriBuilder.appendQueryParameter("q", defaultKeyWord);
+        uriBuilder.appendQueryParameter("q", minAuthor );
         uriBuilder.appendQueryParameter("orderby", orderBy);
 
         return new NewsLoader(this, uriBuilder.toString());

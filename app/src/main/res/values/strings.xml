@@ -10,16 +10,21 @@
     <string name="settings_menu_item">Settings</string>
     <string name="settings_title">News Settings</string>
 
-    <string name="settings_order_by_most_recent_label">Most Recent</string>
-    <string name="settings_name_label">Category</string>
-    <string name="settings_order_by_most_recent_value" translatable="false">date</string>
-    <string name="settings_order_by_label">Order By</string>
-    <string name="settings_order_by_key" translatable="false">order_by</string>
-    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_label </string>
-    <string name="sec">Sports</string>
-    <string name="settings_order_by_keyword_key">sort_key_word</string>
-    <string name="settings_by_keyword_value">sports</string>
+
 
 
     <string name="settings_by_content" translatable="false">q</string>
+
+
+    <string name="settings_min_main_label">Minimum Author</string>
+    <string name="settings_min_main_key" translatable="false">min_author </string>
+    <string name="settings_min_main_default" translatable="false">author </string>
+
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by </string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_most_recent_value</string>
+    <string name="settings_order_by_min_label">Author</string>
+    <string name="settings_order_by_min_value" translatable="false">author </string>
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">date </string>
 </resources>

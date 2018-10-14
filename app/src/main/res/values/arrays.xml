@@ -7,6 +7,6 @@
 
     <string-array name="settings_order_by_values">
         <item>@string/settings_order_by_most_recent_value</item>
-        <item>@string/settings_by_keyword_value</item>
+        <item>@string/settings_order_by_min_value</item>
     </string-array>
 </resources>
